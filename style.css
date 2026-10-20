@@ -1,0 +1,115 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f2f5f9;
+    color: #222;
+}
+
+.page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    color: #1557a5;
+}
+
+.description {
+    text-align: center;
+    line-height: 1.6;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0d6efd;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #084298;
+}
+
+.current {
+    margin: 20px 0 10px;
+}
+
+/* Flex Container cần quan sát */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+    border: 2px solid #333;
+    background-color: #f8f9fa;
+    align-content: flex-start;
+}
+
+.item {
+    flex: 0 0 180px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    border: 1px solid #5b9bd5;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.explanation,
+.notes {
+    margin-top: 25px;
+    padding: 15px 20px;
+    background-color: #eef5ff;
+    border-radius: 8px;
+    line-height: 1.7;
+}
+
+.explanation h2,
+.notes h2 {
+    color: #1557a5;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .page {
+        padding: 15px;
+    }
+
+    .item {
+        flex-basis: 140px;
+    }
+
+    .container {
+        height: 350px;
+    }
+}
