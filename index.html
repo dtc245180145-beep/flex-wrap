@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành CSS Flex Wrap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="page">
+        <h1>Thực hành CSS: flex-wrap</h1>
+        <p class="description">
+            Thay đổi giá trị flex-wrap để quan sát cách các Flex Items
+            sắp xếp khi không đủ không gian trên một dòng.
+        </p>
+
+        <div class="controls">
+            <button onclick="changeWrap('nowrap')">nowrap</button>
+            <button onclick="changeWrap('wrap')">wrap</button>
+            <button onclick="changeWrap('wrap-reverse')">wrap-reverse</button>
+            <button onclick="changeWrap('initial')">initial</button>
+        </div>
+
+        <p class="current">
+            Giá trị hiện tại: <strong id="currentValue">wrap</strong>
+        </p>
+
+        <div class="container" id="flexContainer">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+        </div>
+
+        <section class="explanation">
+            <h2>Giải thích</h2>
+            <p id="description">
+                wrap: Các Flex Items tự động xuống dòng khi không đủ chỗ.
+            </p>
+        </section>
+
+        <section class="notes">
+            <h2>Tổng kết</h2>
+            <ul>
+                <li><strong>nowrap:</strong> Tất cả Item nằm trên một dòng.</li>
+                <li><strong>wrap:</strong> Item được phép xuống dòng.</li>
+                <li><strong>wrap-reverse:</strong> Xuống dòng theo hướng ngược lại.</li>
+                <li><strong>initial:</strong> Trở về giá trị mặc định nowrap.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        const flexContainer = document.getElementById("flexContainer");
+        const currentValue = document.getElementById("currentValue");
+        const description = document.getElementById("description");
+
+        function changeWrap(value) {
+            flexContainer.style.flexWrap = value;
+            currentValue.textContent = value;
+
+            const explanations = {
+                "nowrap": "nowrap: Các Item không xuống dòng. Chúng có thể co lại hoặc tràn ra ngoài Container.",
+                "wrap": "wrap: Các Item tự động xuống dòng khi không đủ không gian.",
+                "wrap-reverse": "wrap-reverse: Các Item được phép xuống dòng, nhưng hướng xếp các dòng bị đảo ngược.",
+                "initial": "initial: Thuộc tính trở về giá trị mặc định nowrap."
+            };
+
+            description.textContent = explanations[value];
+        }
+
+        // Giá trị ban đầu
+        changeWrap("wrap");
+    </script>
+
+</body>
+</html>
